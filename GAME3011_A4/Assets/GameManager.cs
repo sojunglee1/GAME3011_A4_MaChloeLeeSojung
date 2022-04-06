@@ -12,9 +12,12 @@ public enum DifficultyLevel
 
 public class GameManager : MonoBehaviour
 {
+    public float timer;
     public DifficultyLevel difficultylvl;
     public int blockedTile;
+    public int ICETile;
     public List<Tile> buttons;
+    public List<Tile> freeButtons;
 
     private void Awake()
     {
@@ -26,25 +29,45 @@ public class GameManager : MonoBehaviour
         {
             button.ResetTile();
         }
+
+        freeButtons.Clear();
+        freeButtons.AddRange(buttons);
+
         SetDifficultyLevel();
         ResetBlockedTiles();
+        ResetICETiles();
+    }
+
+    private void Update()
+    {
+        if (timer > 0) timer -= Time.deltaTime;
     }
 
     void ResetBlockedTiles()
     {
-        int index = Random.Range(0, buttons.Count - 1);
-        print(index);
         for (int i = 0; i < blockedTile; i++)
         {
-            if (!buttons[index].blocked)
+            int index = Random.Range(0, freeButtons.Count - 1);
+            if (freeButtons.Contains(buttons[index]))
             {
                 buttons[index].blocked = true;
+                freeButtons.Remove(buttons[index]);
             }
-            else
+            else i--;
+        }
+    }
+
+    void ResetICETiles()
+    {
+        for (int i = 0; i < ICETile; i++)
+        {
+            int index = Random.Range(0, freeButtons.Count - 1);
+            if (freeButtons.Contains(buttons[index]))
             {
-                if (index < buttons.Count) buttons[index++].blocked = true;
-                else buttons[index--].blocked = true;
+                buttons[index].critical = true;
+                freeButtons.Remove(buttons[index]);
             }
+            else i--;
         }
     }
 
@@ -53,19 +76,27 @@ public class GameManager : MonoBehaviour
         switch (difficultylvl)
         {
             case DifficultyLevel.Easy:
+                timer = 60;
                 blockedTile = 1;
+                ICETile = 0;
                 break;
 
             case DifficultyLevel.Medium:
+                timer = 30;
                 blockedTile = 2;
+                ICETile = 1;
                 break;
 
             case DifficultyLevel.Hard:
+                timer = 15;
                 blockedTile = 3;
+                ICETile = 2;
                 break;
 
             default:
+                timer = 30;
                 blockedTile = 0;
+                ICETile = 0;
                 break;
         }
     }
