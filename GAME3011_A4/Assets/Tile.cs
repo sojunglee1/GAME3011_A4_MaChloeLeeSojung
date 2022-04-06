@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Tile : MonoBehaviour
 {
+    GameManager gm;
     Button button;
     public bool selected = false;       //user clicks on button
     public bool blocked = false;        //this tile is blocked (red)
@@ -12,19 +13,22 @@ public class Tile : MonoBehaviour
                                             //if this tile is clicked on, there's a chance for game over
 
     public bool exposed = false;        //checks if the critical tile is exposed
-                                            //exposure depends on player's skill
+                                        //exposure depends on player's skill
+
+    private Ray rightRay;
 
     private void Start()
     {
         button = GetComponent<Button>();
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     private void Update()
     {
         if (blocked)
         {
-            GetComponent<Image>().color = Color.red;
             selected = false;
+            GetComponent<Image>().color = Color.red;   
         }
         else if (exposed)
         {
@@ -34,20 +38,31 @@ public class Tile : MonoBehaviour
 
     public void Toggle()
     {
-        if (!blocked)
+        if (gm.gamestatus != GameStatus.won || gm.gamestatus != GameStatus.lost || !blocked)
         {
             selected = !selected;
 
-            if (selected && !exposed)
+            if (selected)
             {
-                if (!critical) GetComponent<Image>().color = Color.green;
-                else GetComponent<Image>().color = Color.blue;
+                if (critical)
+                {
+                    GetComponent<Image>().color = Color.blue;
+                    gm.gamestatus = GameStatus.lost;
+                }
+                else
+                {
+                    GetComponent<Image>().color = Color.green;
+                }
             }
             else
             {
                 GetComponent<Image>().color = Color.cyan;
             }
+
+            gm.ExposeTile(this);
+            gm.CheckTiles(this);
         }
+
     }
 
     public void ResetTile()
@@ -58,4 +73,5 @@ public class Tile : MonoBehaviour
         exposed = false;
         GetComponent<Image>().color = Color.cyan;
     }
+
 }

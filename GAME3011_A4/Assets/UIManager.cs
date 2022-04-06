@@ -5,18 +5,42 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public GameManager gm;
+
     public Text timerText;
     public int timer;
 
     public Text playerSkillText;
     public Text difficultyText;
 
+    public Text Prompt;
+
+    private void Start()
+    {
+        gm = GetComponent<GameManager>();
+    }
+
     void Update()
     {
-        timer = (int)GetComponent<GameManager>().timer;
+        timer = (int)gm.timer;
         timerText.text = $"Countdown:\n{timer.ToString()} seconds";
 
-        playerSkillText.text = $"Player Skill:\n{GetComponent<GameManager>().playerSkill.ToString()}";
-        difficultyText.text = $"Hack Level:\n{GetComponent<GameManager>().difficultylvl.ToString()}";
+        playerSkillText.text = $"Player Skill:\n{gm.playerSkill.ToString()}";
+        difficultyText.text = $"Hack Level:\n{gm.difficultylvl.ToString()}";
+
+        switch(gm.gamestatus)
+        {
+            case GameStatus.won:
+                Prompt.text = "Game Won!";
+                break;
+
+            case GameStatus.lost:
+                Prompt.text = "Game Lost!";
+                break;
+
+            case GameStatus.ingame:
+                Prompt.text = "Goal:\nTry to click on three 'safe' consecutive tiles!";
+                break;
+        }
     }
 }
