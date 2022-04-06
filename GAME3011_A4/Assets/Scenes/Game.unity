@@ -596,8 +596,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   difficultylvl: 2
+  playerSkill: 2
   blockedTile: 0
   ICETile: 0
+  exposedTile: 0
   buttons:
   - {fileID: 1132901024}
   - {fileID: 1421395411}

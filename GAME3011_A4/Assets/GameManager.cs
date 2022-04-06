@@ -10,12 +10,22 @@ public enum DifficultyLevel
     Hard
 }
 
+public enum PlayerSkill
+{
+    New,
+    Intermediate,
+    Expert
+}
+
 public class GameManager : MonoBehaviour
 {
     public float timer;
+
     public DifficultyLevel difficultylvl;
+    public PlayerSkill playerSkill;
     public int blockedTile;
     public int ICETile;
+    public int exposedTile;
     public List<Tile> buttons;
     public List<Tile> freeButtons;
 
@@ -34,8 +44,10 @@ public class GameManager : MonoBehaviour
         freeButtons.AddRange(buttons);
 
         SetDifficultyLevel();
+        SetPlayerLevel();
         ResetBlockedTiles();
         ResetICETiles();
+        ShowExposedTiles();
     }
 
     private void Update()
@@ -71,32 +83,68 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void ShowExposedTiles()
+    {
+        for (int i = 0; i < exposedTile; i++)
+        {
+            foreach(Tile button in buttons)
+            {
+                if (button.critical && !button.exposed)
+                {
+                    button.exposed = true;
+                    break;
+                }
+            }
+        }
+    }
+
     void SetDifficultyLevel()
     {
         switch (difficultylvl)
         {
             case DifficultyLevel.Easy:
                 timer = 60;
-                blockedTile = 1;
-                ICETile = 0;
+                blockedTile = 0;
+                ICETile = 1;
                 break;
 
             case DifficultyLevel.Medium:
                 timer = 30;
-                blockedTile = 2;
-                ICETile = 1;
+                blockedTile = 1;
+                ICETile = 2;
                 break;
 
             case DifficultyLevel.Hard:
                 timer = 15;
-                blockedTile = 3;
-                ICETile = 2;
+                blockedTile = 2;
+                ICETile = 3;
                 break;
 
             default:
                 timer = 30;
                 blockedTile = 0;
                 ICETile = 0;
+                break;
+        }
+    }
+
+    void SetPlayerLevel()
+    {
+        switch(playerSkill)
+        {
+            case PlayerSkill.New:
+                exposedTile = 0;
+                break;
+
+            case PlayerSkill.Intermediate:
+                exposedTile = 1;
+                break;
+
+            case PlayerSkill.Expert:
+                exposedTile = 2;
+                break;
+
+            default:
                 break;
         }
     }
