@@ -43,8 +43,6 @@ public class GameManager : MonoBehaviour
     }
     public void Start()
     {
-
-
         foreach (Tile button in buttons)
         {
             button.ResetTile();
@@ -58,7 +56,7 @@ public class GameManager : MonoBehaviour
         SetDifficultyLevel();
         SetPlayerLevel();
         ResetBlockedTiles();
-        ResetICETiles();
+        ResetCriticalTiles();
         ShowExposedTiles();
     }
 
@@ -81,7 +79,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void ResetICETiles()
+    void ResetCriticalTiles()
     {
         for (int i = 0; i < criticalTile; i++)
         {
@@ -161,65 +159,60 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ExposeTile(Tile currentbutton)
+    public void ExposeNextTile(Tile currentbutton)
     {
-        int index = buttons.IndexOf(currentbutton);
-        buttons[index++].selected = true;
-        buttons[index++].GetComponent<Image>().color = Color.green;
+        int index = buttons.IndexOf(currentbutton) + 1;
+        if (index < buttons.Count)
+        {
+            if (!buttons[index].blocked && !buttons[index].critical)
+            {
+                buttons[index].selected = true;
+                buttons[index].GetComponent<Image>().color = Color.green;
+            }
+        }
     }
 
-    public GameObject tile1, tile2;
-
-    public void CheckTiles(Tile button)
+    public void CheckTiles()
     {
-        Ray2D ray = new Ray2D(button.transform.position, Vector2.right * 250);
-        var hitData = Physics2D.Raycast(ray.origin, Vector2.right * 250);
+        foreach (Tile button in buttons)
+        {
+            if (CollidingTile(button, Vector2.right) != null && CollidingTile(button, Vector2.left) != null)
+            {
+                if (CheckSelectedTile(CollidingTile(button, Vector2.right)) &&
+                    CheckSelectedTile(CollidingTile(button, Vector2.left)))
+                {
+                    gamestatus = GameStatus.won;
+                }
+            }
 
+            if (CollidingTile(button, Vector2.up) != null && CollidingTile(button, Vector2.down) != null)
+            {
+                if (CheckSelectedTile(CollidingTile(button, Vector2.up)) &&
+                    CheckSelectedTile(CollidingTile(button, Vector2.down)))
+                {
+                    gamestatus = GameStatus.won;
+                }
+            }
+
+        }
+    }
+
+    private Tile CollidingTile(Tile button, Vector2 direction)
+    {
+        var hitData = Physics2D.Raycast(button.transform.position, direction, 150.0f);
         if (hitData.collider != null)
         {
-            print("hit");
-            print(hitData.collider.name);
+            return hitData.collider.GetComponent<Tile>();
         }
-
-        //foreach (Tile button in buttons)
-        //{
-        //    var leftData = Physics2D.Raycast(button.transform.position, Vector2.left);
-        //    var rightData = Physics2D.Raycast(button.transform.position, Vector2.right);
-        //    var upData = Physics2D.Raycast(button.transform.position, Vector2.up);
-        //    var downData = Physics2D.Raycast(button.transform.position, Vector2.down);
-
-        //    if (button.selected)
-        //    {
-        //        print(button.name);
-        //        while (leftData.collider != null && rightData.collider != null)
-        //        {
-        //            print(leftData.collider.gameObject.name);
-        //            print(rightData.collider.gameObject.name);
-
-        //            if (leftData.collider.gameObject.GetComponent<Tile>().selected &&
-        //                rightData.collider.gameObject.GetComponent<Tile>().selected)
-        //            {
-        //                gamestatus = GameStatus.won;
-        //            }
-        //        }
-
-        //        while (upData.collider != null && downData.collider != null)
-        //        {
-        //            print(upData.collider.gameObject.name);
-        //            print(downData.collider.gameObject.name);
-
-        //            if (upData.collider.gameObject.GetComponent<Tile>().selected &&
-        //                downData.collider.gameObject.GetComponent<Tile>().selected)
-        //            {
-        //                gamestatus = GameStatus.won;
-        //            }
-        //        }
-        //    }
-        //}
+        else return null;
     }
 
-    private void OnDrawGizmos()
+    private bool CheckSelectedTile(Tile button)
     {
-        
+        if (button.selected && !button.blocked && !button.critical)
+        {
+            return true;
+        }
+        else return false;
     }
 }

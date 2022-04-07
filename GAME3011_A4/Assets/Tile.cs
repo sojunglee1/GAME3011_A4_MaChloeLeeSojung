@@ -36,12 +36,11 @@ public class Tile : MonoBehaviour
         }
     }
 
-    public void Toggle()
+    public void Select()
     {
         if (gm.gamestatus != GameStatus.won || gm.gamestatus != GameStatus.lost || !blocked)
         {
-            selected = !selected;
-
+            selected = true;
             if (selected)
             {
                 if (critical)
@@ -59,8 +58,8 @@ public class Tile : MonoBehaviour
                 GetComponent<Image>().color = Color.cyan;
             }
 
-            gm.ExposeTile(this);
-            gm.CheckTiles(this);
+            gm.ExposeNextTile(this);
+            gm.CheckTiles();
         }
 
     }
