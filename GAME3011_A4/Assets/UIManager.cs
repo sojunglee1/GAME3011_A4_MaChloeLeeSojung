@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class UIManager : MonoBehaviour
 {
     public GameManager gm;
@@ -14,6 +15,8 @@ public class UIManager : MonoBehaviour
     public Text difficultyText;
 
     public Text Prompt;
+
+    public Button MainMenuButton;
 
     private void Start()
     {
@@ -33,16 +36,19 @@ public class UIManager : MonoBehaviour
             case GameStatus.won:
                 Prompt.text = "Game Won!";
                 Time.timeScale = 0;
+                MainMenuButton.gameObject.SetActive(true);
                 break;
 
             case GameStatus.lost:
                 Prompt.text = "Game Lost!";
                 Time.timeScale = 0;
+                MainMenuButton.gameObject.SetActive(true);
                 break;
 
             case GameStatus.ingame:
                 Prompt.text = "Goal:\nTry to click on three 'safe' consecutive tiles!";
                 Time.timeScale = 1;
+                MainMenuButton.gameObject.SetActive(false);
                 break;
         }
     }

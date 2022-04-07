@@ -63,6 +63,22 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (timer > 0) timer -= Time.deltaTime;
+        if (gamestatus == GameStatus.ingame && timer <= 0) gamestatus = GameStatus.lost;
+
+        if (gamestatus != GameStatus.ingame)
+        {
+            foreach (Tile button in buttons)
+            {
+                button.GetComponent<Button>().interactable = false;
+            }
+        }
+        else
+        {
+            foreach (Tile button in buttons)
+            {
+                button.GetComponent<Button>().interactable = true;
+            }
+        }
     }
 
     void ResetBlockedTiles()
