@@ -134,17 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a63e53ed809604b8cc750180e52080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &52404109 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-  m_PrefabInstance: {fileID: 572237846}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &130483574
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,18 +535,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
 --- !u!224 &235403132 stripped
@@ -602,7 +579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1119293741784783596, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1119293741784783596, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -671,18 +648,6 @@ PrefabInstance:
     - target: {fileID: 1119293741784783597, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
       propertyPath: m_Name
       value: Button (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
@@ -809,18 +774,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (13)
       objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
 --- !u!224 &317620711 stripped
@@ -945,18 +898,6 @@ PrefabInstance:
     - target: {fileID: 1119293741784783597, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
       propertyPath: m_Name
       value: Button (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
@@ -1411,18 +1352,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (12)
       objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
 --- !u!224 &572237847 stripped
@@ -1467,7 +1396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1119293741784783596, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1119293741784783596, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1540,18 +1469,6 @@ PrefabInstance:
     - target: {fileID: 1119293741784783598, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
       propertyPath: m_Color.b
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
@@ -1673,7 +1590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1119293741784783596, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1119293741784783596, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1742,18 +1659,6 @@ PrefabInstance:
     - target: {fileID: 1119293741784783597, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
       propertyPath: m_Name
       value: Button (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
@@ -1869,18 +1774,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
 --- !u!224 &954510232 stripped
@@ -1994,18 +1887,6 @@ PrefabInstance:
     - target: {fileID: 1119293741784783597, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
       propertyPath: m_Name
       value: Button (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
@@ -2349,18 +2230,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
 --- !u!224 &1608610687 stripped
@@ -2486,18 +2355,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
 --- !u!224 &1698694506 stripped
@@ -2612,18 +2469,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
 --- !u!224 &1711549338 stripped
@@ -2737,18 +2582,6 @@ PrefabInstance:
     - target: {fileID: 1119293741784783597, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
       propertyPath: m_Name
       value: Button (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
@@ -2885,18 +2718,6 @@ PrefabInstance:
     - target: {fileID: 1119293741784783597, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
       propertyPath: m_Name
       value: Button (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 52404109}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Selectable, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119293741784783599, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10546263ff40f8e4c986058b9141c0a5, type: 3}
@@ -3345,9 +3166,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 656232046}
   - {fileID: 860053948}
   - {fileID: 275627867}
+  - {fileID: 656232046}
   - {fileID: 954510232}
   - {fileID: 1698694506}
   - {fileID: 1608610687}

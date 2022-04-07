@@ -32,14 +32,17 @@ public class UIManager : MonoBehaviour
         {
             case GameStatus.won:
                 Prompt.text = "Game Won!";
+                Time.timeScale = 0;
                 break;
 
             case GameStatus.lost:
                 Prompt.text = "Game Lost!";
+                Time.timeScale = 0;
                 break;
 
             case GameStatus.ingame:
                 Prompt.text = "Goal:\nTry to click on three 'safe' consecutive tiles!";
+                Time.timeScale = 1;
                 break;
         }
     }
