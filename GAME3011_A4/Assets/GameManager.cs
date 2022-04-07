@@ -126,28 +126,26 @@ public class GameManager : MonoBehaviour
 
     void SetDifficultyLevel()
     {
+        difficultylvl = (DifficultyLevel)Random.Range(0, (int)DifficultyLevel.Hard + 1);
+
         switch (difficultylvl)
         {
             case DifficultyLevel.Easy:
-                timer = 60;
                 blockedTile = 0;
                 criticalTile = 1;
                 break;
 
             case DifficultyLevel.Medium:
-                timer = 30;
                 blockedTile = 1;
                 criticalTile = 2;
                 break;
 
             case DifficultyLevel.Hard:
-                timer = 15;
                 blockedTile = 2;
                 criticalTile = 3;
                 break;
 
             default:
-                timer = 30;
                 blockedTile = 0;
                 criticalTile = 0;
                 break;
@@ -156,18 +154,23 @@ public class GameManager : MonoBehaviour
 
     void SetPlayerLevel()
     {
+        playerSkill = (PlayerSkill)Random.Range(0, (int)PlayerSkill.Expert + 1);
+
         switch(playerSkill)
         {
             case PlayerSkill.New:
+                timer = 5;
                 exposedTile = 0;
                 break;
 
             case PlayerSkill.Intermediate:
+                timer = 10;
                 exposedTile = 1;
                 break;
 
             case PlayerSkill.Expert:
                 exposedTile = 2;
+                timer = 15;
                 break;
 
             default:
