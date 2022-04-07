@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 {
     public float timer;
 
-    public GameStatus gamestatus;
+    public GameStatus gamestatus = GameStatus.ingame;
     public DifficultyLevel difficultylvl;
     public PlayerSkill playerSkill;
     public int blockedTile;
@@ -41,7 +41,8 @@ public class GameManager : MonoBehaviour
     {
         Random.seed = Random.Range(0, 100);
     }
-    public void Start()
+
+    public void StartGame()
     {
         foreach (Tile button in buttons)
         {

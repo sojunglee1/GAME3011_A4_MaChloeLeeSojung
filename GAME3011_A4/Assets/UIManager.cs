@@ -33,6 +33,12 @@ public class UIManager : MonoBehaviour
 
         switch(gm.gamestatus)
         {
+            case GameStatus.ingame:
+                Prompt.text = "Goal:\nTry to click on three 'safe' consecutive tiles!";
+                Time.timeScale = 1;
+                MainMenuButton.gameObject.SetActive(false);
+                break;
+
             case GameStatus.won:
                 Prompt.text = "Game Won!";
                 Time.timeScale = 0;
@@ -43,12 +49,6 @@ public class UIManager : MonoBehaviour
                 Prompt.text = "Game Lost!";
                 Time.timeScale = 0;
                 MainMenuButton.gameObject.SetActive(true);
-                break;
-
-            case GameStatus.ingame:
-                Prompt.text = "Goal:\nTry to click on three 'safe' consecutive tiles!";
-                Time.timeScale = 1;
-                MainMenuButton.gameObject.SetActive(false);
                 break;
         }
     }
