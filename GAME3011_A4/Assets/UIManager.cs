@@ -17,10 +17,14 @@ public class UIManager : MonoBehaviour
     public Text Prompt;
 
     public Button MainMenuButton;
+    public GameObject winScreen;
+    public GameObject loseScreen;
 
     private void Start()
     {
         gm = GetComponent<GameManager>();
+        winScreen.SetActive(false);
+        loseScreen.SetActive(false);
     }
 
     void Update()
@@ -40,14 +44,16 @@ public class UIManager : MonoBehaviour
                 break;
 
             case GameStatus.won:
-                Prompt.text = "Game Won!";
+                Prompt.text = "Total Moves: " + gm.moveCount;
                 Time.timeScale = 0;
+                winScreen.SetActive(true);
                 MainMenuButton.gameObject.SetActive(true);
                 break;
 
             case GameStatus.lost:
                 Prompt.text = "Game Lost!";
                 Time.timeScale = 0;
+                loseScreen.SetActive(true);
                 MainMenuButton.gameObject.SetActive(true);
                 break;
         }

@@ -36,10 +36,14 @@ public class GameManager : MonoBehaviour
     public int exposedTile;
     public List<Tile> buttons;
     public List<Tile> freeButtons;
+    public int moveCount;
+    [SerializeField] UIManager ui;
 
     private void Awake()
     {
         Random.seed = Random.Range(0, 100);
+        SetDifficultyLevel();
+        SetPlayerLevel();
     }
 
     public void StartGame()
@@ -59,6 +63,9 @@ public class GameManager : MonoBehaviour
         ResetBlockedTiles();
         ResetCriticalTiles();
         ShowExposedTiles();
+        ui.winScreen.SetActive(false);
+        ui.loseScreen.SetActive(false);
+        moveCount = 0;
     }
 
     private void Update()
@@ -188,6 +195,7 @@ public class GameManager : MonoBehaviour
             {
                 buttons[index].selected = true;
                 buttons[index].GetComponent<Image>().color = Color.green;
+                moveCount++;
             }
         }
     }
